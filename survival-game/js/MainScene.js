@@ -1,4 +1,5 @@
 import Player from './Player.js';
+import Resource from './Resource.js';
 
 export default class MainScene extends Phaser.Scene {
   constructor() {
@@ -7,17 +8,14 @@ export default class MainScene extends Phaser.Scene {
 
   preload() {
     Player.preload(this);
+    Resource.preload(this);
     this.load.image('tiles', 'assets/images/RPG Nature Tileset.png');
     this.load.tilemapTiledJSON('map', 'assets/images/map.json');
-    this.load.atlas(
-      'resources',
-      'assets/images/resources.png',
-      'assets/images/resources_atlas.json'
-    );
   }
 
   create() {
     const map = this.make.tilemap({ key: 'map' });
+    this.map = map;
     const tileset = map.addTilesetImage(
       'RPG Nature Tileset',
       'tiles',
@@ -30,26 +28,10 @@ export default class MainScene extends Phaser.Scene {
     const layer2 = map.createStaticLayer('타일 레이어 2', tileset, 0, 0);
     layer1.setCollisionByProperty({ collides: true });
     this.matter.world.convertTilemapLayer(layer1);
+    this.map
+      .getObjectLayer('Resources')
+      .objects.forEach(resource => new Resource({ scene: this, resource }));
 
-    let tree = new Phaser.Physics.Matter.Sprite(
-      this.matter.world,
-      50,
-      50,
-      'resources',
-      'tree'
-    );
-
-    let rock = new Phaser.Physics.Matter.Sprite(
-      this.matter.world,
-      150,
-      150,
-      'resources',
-      'rock'
-    );
-    tree.setStatic(true);
-    rock.setStatic(true);
-    this.add.existing(tree);
-    this.add.existing(rock);
     this.player = new Player({
       scene: this,
       x: 100,
@@ -64,6 +46,7 @@ export default class MainScene extends Phaser.Scene {
       right: Phaser.Input.Keyboard.KeyCodes.D,
     });
   }
+
   update() {
     this.player.update();
   }
