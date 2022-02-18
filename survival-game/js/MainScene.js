@@ -34,8 +34,8 @@ export default class MainScene extends Phaser.Scene {
 
     this.player = new Player({
       scene: this,
-      x: 100,
-      y: 100,
+      x: 200,
+      y: 200,
       texture: 'alchemist',
       frame: 'alchemist_idle_1',
     });
