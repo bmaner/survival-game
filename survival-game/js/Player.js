@@ -1,9 +1,12 @@
-export default class Player extends Phaser.Physics.Matter.Sprite {
+import MatterEntity from './MatterEntity.js';
+
+export default class Player extends MatterEntity {
   constructor(data) {
     let { scene, x, y, texture, frame } = data;
-    super(scene.matter.world, x, y, texture, frame);
+    // super(scene.matter.world, x, y, texture, frame);
+    super({ ...data, health: 2, drops: [], name: 'player' });
     this.touching = [];
-    this.scene.add.existing(this);
+    // this.scene.add.existing(this);
     //Weapon
     this.spriteWeapon = new Phaser.GameObjects.Sprite(
       this.scene,
@@ -32,6 +35,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     this.setExistingBody(compoundBody);
     this.setFixedRotation();
     this.CreateMiningCollisions(playerSensor);
+    this.CreatePickupCollisions(playerCollider);
     this.scene.input.on('pointermove', pointer =>
       this.setFlipX(pointer.worldX < this.x)
     );
@@ -48,11 +52,12 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       frameWidth: 32,
       frameHeight: 32,
     });
+    scene.load.audio('player', 'assets/audio/player.wav');
   }
 
-  get velocity() {
-    return this.body.velocity;
-  }
+  // get velocity() {
+  //   return this.body.velocity;
+  // }
 
   update() {
     const speed = 2.5;
@@ -117,6 +122,35 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       context: this.scene,
     });
   }
+
+  CreatePickupCollisions(playerCollider) {
+    this.scene.matterCollision.addOnCollideStart({
+      objectA: [playerCollider],
+      callback: other => {
+        // if (other.bodyB.isSensor) return;
+        if (other.gameObjectB && other.gameObjectB.pickup) {
+          other.gameObjectB.pickup();
+        }
+        // this.touching.push(other.gameObjectB);
+        // console.log(this.touching.length, other.gameObjectB.name);
+      },
+      context: this.scene,
+    });
+    this.scene.matterCollision.addOnCollideActive({
+      objectA: [playerCollider],
+      callback: other => {
+        if (other.gameObjectB && other.gameObjectB.pickup) {
+          other.gameObjectB.pickup();
+        }
+        // this.touching = this.touching.filter(
+        //   gameObject => gameObject != other.gameObjectB
+        // );
+        // console.log(this.touching.length);
+      },
+      context: this.scene,
+    });
+  }
+
   whackStuff() {
     this.touching = this.touching.filter(
       gameObject => gameObject.hit && !gameObject.dead
