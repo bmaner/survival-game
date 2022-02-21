@@ -13,7 +13,7 @@ const config = {
   physics: {
     default: 'matter',
     matter: {
-      debug: true,
+      debug: false, // object 주변의 센서를 없애려면 false, 생기게 하려면 true
       gravity: { y: 0 },
     },
   },

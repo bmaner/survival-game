@@ -1,0 +1,184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--global',
+1 verbose cli   'tile-extruder' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData tile-extruder
+8 silly fetchNamedPackageData tile-extruder
+9 silly mapToRegistry name tile-extruder
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry http://registry.npmjs.org/
+12 silly mapToRegistry uri http://registry.npmjs.org/tile-extruder
+13 verbose request uri http://registry.npmjs.org/tile-extruder
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 오후 2:44:00
+16 verbose request id f781d668569e9087
+17 http request GET http://registry.npmjs.org/tile-extruder
+18 http 200 http://registry.npmjs.org/tile-extruder
+19 verbose headers { date: 'Mon, 21 Feb 2022 05:44:01 GMT',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'transfer-encoding': 'chunked',
+19 verbose headers   connection: 'close',
+19 verbose headers   'cf-ray': '6e0da90bab6d61b3-ICN',
+19 verbose headers   'cache-control': 'public, max-age=300',
+19 verbose headers   etag: 'W/"8e545223bbdd6d68ddc3981c3a3d7291"',
+19 verbose headers   'last-modified': 'Tue, 19 Jan 2021 16:29:14 GMT',
+19 verbose headers   vary: 'accept-encoding, accept',
+19 verbose headers   'cf-cache-status': 'MISS',
+19 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+19 verbose headers   server: 'cloudflare',
+19 verbose headers   'content-encoding': 'gzip' }
+20 silly get cb [ 200,
+20 silly get   { date: 'Mon, 21 Feb 2022 05:44:01 GMT',
+20 silly get     'content-type': 'application/json',
+20 silly get     'transfer-encoding': 'chunked',
+20 silly get     connection: 'close',
+20 silly get     'cf-ray': '6e0da90bab6d61b3-ICN',
+20 silly get     'cache-control': 'public, max-age=300',
+20 silly get     etag: 'W/"8e545223bbdd6d68ddc3981c3a3d7291"',
+20 silly get     'last-modified': 'Tue, 19 Jan 2021 16:29:14 GMT',
+20 silly get     vary: 'accept-encoding, accept',
+20 silly get     'cf-cache-status': 'MISS',
+20 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+20 silly get     server: 'cloudflare',
+20 silly get     'content-encoding': 'gzip' } ]
+21 verbose get saving tile-extruder to /home/park/.npm/registry.npmjs.org/tile-extruder/.cache.json
+22 silly install normalizeTree
+23 silly loadCurrentTree Finishing
+24 silly loadIdealTree Starting
+25 silly install loadIdealTree
+26 silly cloneCurrentTree Starting
+27 silly install cloneCurrentTreeToIdealTree
+28 silly cloneCurrentTree Finishing
+29 silly loadShrinkwrap Starting
+30 silly install loadShrinkwrap
+31 silly loadShrinkwrap Finishing
+32 silly loadAllDepsIntoIdealTree Starting
+33 silly install loadAllDepsIntoIdealTree
+34 silly resolveWithNewModule tile-extruder@2.1.0 checking installable status
+35 silly cache add args [ 'tile-extruder', null ]
+36 verbose cache add spec tile-extruder
+37 silly cache add parsed spec Result {
+37 silly cache add   raw: 'tile-extruder',
+37 silly cache add   scope: null,
+37 silly cache add   name: 'tile-extruder',
+37 silly cache add   rawSpec: '',
+37 silly cache add   spec: 'latest',
+37 silly cache add   type: 'tag' }
+38 silly addNamed tile-extruder@latest
+39 verbose addNamed "latest" is being treated as a dist-tag for tile-extruder
+40 info addNameTag [ 'tile-extruder', 'latest' ]
+41 silly mapToRegistry name tile-extruder
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry http://registry.npmjs.org/
+44 silly mapToRegistry uri http://registry.npmjs.org/tile-extruder
+45 verbose addNameTag registry:http://registry.npmjs.org/tile-extruder not in flight; fetching
+46 verbose get http://registry.npmjs.org/tile-extruder not expired, no request
+47 silly addNameTag next cb for tile-extruder with tag latest
+48 silly addNamed tile-extruder@2.1.0
+49 verbose addNamed "2.1.0" is a plain semver version for tile-extruder
+50 silly mapToRegistry name tile-extruder
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry http://registry.npmjs.org/
+53 silly mapToRegistry uri http://registry.npmjs.org/tile-extruder
+54 verbose addRemoteTarball http://registry.npmjs.org/tile-extruder/-/tile-extruder-2.1.0.tgz not in flight; adding
+55 verbose addRemoteTarball [ 'http://registry.npmjs.org/tile-extruder/-/tile-extruder-2.1.0.tgz',
+55 verbose addRemoteTarball   '253da34982a102450fb931c4931dab06fca1e27e' ]
+56 info retry fetch attempt 1 at 오후 2:44:01
+57 info attempt registry request try #1 at 오후 2:44:01
+58 http fetch GET http://registry.npmjs.org/tile-extruder/-/tile-extruder-2.1.0.tgz
+59 http fetch 200 http://registry.npmjs.org/tile-extruder/-/tile-extruder-2.1.0.tgz
+60 silly fetchAndShaCheck shasum 253da34982a102450fb931c4931dab06fca1e27e
+61 verbose addTmpTarball /tmp/npm-28997-8e89c200/registry.npmjs.org/tile-extruder/-/tile-extruder-2.1.0.tgz not in flight; adding
+62 verbose addTmpTarball already have metadata; skipping unpack for tile-extruder@2.1.0
+63 silly cache afterAdd tile-extruder@2.1.0
+64 verbose afterAdd /home/park/.npm/tile-extruder/2.1.0/package/package.json not in flight; writing
+65 verbose afterAdd /home/park/.npm/tile-extruder/2.1.0/package/package.json written
+66 silly fetchNamedPackageData commander
+67 silly mapToRegistry name commander
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry http://registry.npmjs.org/
+70 silly mapToRegistry uri http://registry.npmjs.org/commander
+71 silly fetchNamedPackageData jimp
+72 silly mapToRegistry name jimp
+73 silly mapToRegistry using default registry
+74 silly mapToRegistry registry http://registry.npmjs.org/
+75 silly mapToRegistry uri http://registry.npmjs.org/jimp
+76 verbose request uri http://registry.npmjs.org/commander
+77 verbose request no auth needed
+78 info attempt registry request try #1 at 오후 2:44:02
+79 http request GET http://registry.npmjs.org/commander
+80 verbose request uri http://registry.npmjs.org/jimp
+81 verbose request no auth needed
+82 info attempt registry request try #1 at 오후 2:44:02
+83 http request GET http://registry.npmjs.org/jimp
+84 http 200 http://registry.npmjs.org/commander
+85 verbose headers { date: 'Mon, 21 Feb 2022 05:44:02 GMT',
+85 verbose headers   'content-type': 'application/json',
+85 verbose headers   'transfer-encoding': 'chunked',
+85 verbose headers   connection: 'close',
+85 verbose headers   'cf-ray': '6e0da9186a370f74-ICN',
+85 verbose headers   age: '207',
+85 verbose headers   'cache-control': 'public, max-age=300',
+85 verbose headers   etag: 'W/"745bee868279c9af2312177ce136c297"',
+85 verbose headers   'last-modified': 'Thu, 17 Feb 2022 16:28:51 GMT',
+85 verbose headers   vary: 'accept-encoding, accept',
+85 verbose headers   'cf-cache-status': 'HIT',
+85 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+85 verbose headers   'x-amz-replication-status': 'PENDING',
+85 verbose headers   server: 'cloudflare',
+85 verbose headers   'content-encoding': 'gzip' }
+86 silly get cb [ 200,
+86 silly get   { date: 'Mon, 21 Feb 2022 05:44:02 GMT',
+86 silly get     'content-type': 'application/json',
+86 silly get     'transfer-encoding': 'chunked',
+86 silly get     connection: 'close',
+86 silly get     'cf-ray': '6e0da9186a370f74-ICN',
+86 silly get     age: '207',
+86 silly get     'cache-control': 'public, max-age=300',
+86 silly get     etag: 'W/"745bee868279c9af2312177ce136c297"',
+86 silly get     'last-modified': 'Thu, 17 Feb 2022 16:28:51 GMT',
+86 silly get     vary: 'accept-encoding, accept',
+86 silly get     'cf-cache-status': 'HIT',
+86 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+86 silly get     'x-amz-replication-status': 'PENDING',
+86 silly get     server: 'cloudflare',
+86 silly get     'content-encoding': 'gzip' } ]
+87 verbose get saving commander to /home/park/.npm/registry.npmjs.org/commander/.cache.json
+88 verbose stack Error: Missing required argument #1
+88 verbose stack     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+88 verbose stack     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+88 verbose stack     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+88 verbose stack     at /usr/share/npm/lib/install/deps.js:457:7
+88 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+88 verbose stack     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+88 verbose stack     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+88 verbose stack     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+88 verbose stack     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+88 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
+89 verbose cwd /home/park/바탕화면/survival-game/survival-game
+90 error Linux 5.4.0-99-generic
+91 error argv "/usr/bin/node" "/usr/bin/npm" "install" "--global" "tile-extruder"
+92 error node v8.10.0
+93 error npm  v3.5.2
+94 error code EMISSINGARG
+95 error typeerror Error: Missing required argument #1
+95 error typeerror     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+95 error typeerror     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+95 error typeerror     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+95 error typeerror     at /usr/share/npm/lib/install/deps.js:457:7
+95 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+95 error typeerror     at /usr/share/npm/lib/fetch-package-metadata.js:37:12
+95 error typeerror     at addRequestedAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:82:5)
+95 error typeerror     at returnAndAddMetadata (/usr/share/npm/lib/fetch-package-metadata.js:117:7)
+95 error typeerror     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:134:20)
+95 error typeerror     at /usr/share/npm/node_modules/iferr/index.js:13:50
+96 error typeerror This is an error with npm itself. Please report this error at:
+96 error typeerror     <http://github.com/npm/npm/issues>
+97 verbose exit [ 1, true ]

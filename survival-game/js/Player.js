@@ -4,7 +4,7 @@ export default class Player extends MatterEntity {
   constructor(data) {
     let { scene, x, y, texture, frame } = data;
     // super(scene.matter.world, x, y, texture, frame);
-    super({ ...data, health: 2, drops: [], name: 'player' });
+    super({ ...data, health: 20, drops: [], name: 'player' });
     this.touching = [];
     // this.scene.add.existing(this);
     //Weapon
@@ -36,9 +36,9 @@ export default class Player extends MatterEntity {
     this.setFixedRotation();
     this.CreateMiningCollisions(playerSensor);
     this.CreatePickupCollisions(playerCollider);
-    this.scene.input.on('pointermove', pointer =>
-      this.setFlipX(pointer.worldX < this.x)
-    );
+    this.scene.input.on('pointermove', pointer => {
+      if (!this.dead) this.setFlipX(pointer.worldX < this.x);
+    });
   }
 
   static preload(scene) {
@@ -59,7 +59,15 @@ export default class Player extends MatterEntity {
   //   return this.body.velocity;
   // }
 
+  onDeath = () => {
+    this.anims.stop();
+    this.setTexture('items', 0);
+    this.setOrigin(0.5);
+    this.spriteWeapon.destroy();
+  };
+
   update() {
+    if (this.dead) return;
     const speed = 2.5;
     let playerVelocity = new Phaser.Math.Vector2();
     if (this.inputKeys.left.isDown) {
